@@ -1,0 +1,16 @@
+main:
+    push rbp
+    mov rbp,rsp
+    mov DWORD PTR [rbp - 4], 1
+    mov DWORD PTR [rbp - 8], 2
+    mov DWORD PTR [rbp - 12], 3
+    mov eax, DWORD PTR [rbp - 4 ]
+    mov ebx, DWORD PTR [rbp - 8]
+    add eax, ebx
+    mov ebx, DWORD PTR [rbp - 12]
+    add eax, ebx
+    div eax, 3
+    mov DWORD PTR [rbp - 12], eax
+    mov eax, 0
+    pop rbp
+    ret

@@ -1,0 +1,16 @@
+main:
+    push rbp
+    mov rbp,rsp
+    mov DWORD PTR [rbp - 4], 4
+    mov DWORD PTR [rbp - 8], 7
+    mov eax, DWORD PTR [rbp - 4]
+    cmp eax, DWORD PTR [rbp - 8]
+    jl label1
+    jmp label2
+label1:
+    mov eax, DWORD PTR [rbp - 8]
+label2:
+    mov DWORD PTR [rbp - 12], eax
+    mov eax, 0
+    pop rbp
+    ret

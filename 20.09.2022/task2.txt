@@ -1,0 +1,13 @@
+main: 
+    push rbp
+    mov rbp, rsp
+    mov DWORD PTR [rbp - 4], 4 
+label1:
+    cpm DWORD PTR [rbp - 4], 0
+    jl label2
+    sub DWORD PTR [rbp - 4]. 1
+    jmp label1
+label2:
+    mov eax, 0
+    pop rbp
+    ret
