@@ -4,7 +4,7 @@
 enum Colors { Red, Blue, Orange };
 
 std::string toString(int);
-std::string toEnum(int);
+int toEnum(int);
 
 int main ()
 {
@@ -26,13 +26,13 @@ std::string toString(int color)
     return smap[color];
 }
 
-std::string toEnum(int color)
+int toEnum(int color)
 {
     std::map<int, std::string> emap;
 
-    emap[Colors::Red] = "Colors::Red";
-    emap[Colors::Blue] = "Colors::Blue";
-    emap[Colors::Orange] = "Colors::Orange";
+    emap[Colors::Red] = Colors::Red;
+    emap[Colors::Blue] = Colors::Blue;
+    emap[Colors::Orange] = Colors::Orange;
 
     return emap[color];
 }
